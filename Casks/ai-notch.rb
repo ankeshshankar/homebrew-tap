@@ -1,6 +1,6 @@
 cask "ai-notch" do
-  version "0.2.0"
-  sha256 "8a3883c19c69d0adcb52defffe18d80a26a477db1522951c8d829f68ef106414"
+  version "0.2.1"
+  sha256 "0558f66e744d8a12db11c3860066051782f6226e0bf0b93c14a7af4997b2bca8"
 
   url "https://github.com/ankeshshankar/ai-notch/releases/download/v#{version}/AI-Notch-#{version}.dmg"
   name "AI Notch"
@@ -36,4 +36,13 @@ cask "ai-notch" do
     "~/Library/LaunchAgents/info.ankeshshiv.notch.plist",
     "~/Library/Preferences/info.ankeshshiv.notch.plist",
   ]
+
+  caveats <<~EOS
+    AI Notch is signed ad hoc and not notarized, so macOS blocks its first open:
+      1. Open AI Notch, click Done, then in System Settings > Privacy & Security
+         click Open Anyway next to the message about AI Notch.
+      2. If its setup window then says macOS is blocking AI Notch's helper, run
+         the command it shows in Terminal and click Check Again:
+           xattr -dr com.apple.quarantine "#{appdir}/AINotch.app"
+  EOS
 end

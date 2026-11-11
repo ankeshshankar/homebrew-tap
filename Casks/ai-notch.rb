@@ -1,6 +1,6 @@
 cask "ai-notch" do
-  version "0.6.3"
-  sha256 "80d6e74d2c31823b0dfdc35cc70620b03164e7dcdb9f41d6ac17a42f302c3218"
+  version "0.7.0"
+  sha256 "a8311500bbfd7bd05f8813b545b4d5ab8ba7a8c01a77e815b5547312e617fe3e"
 
   url "https://github.com/ankeshshankar/ai-notch/releases/download/v#{version}/AI-Notch-#{version}.dmg"
   name "AI Notch"
